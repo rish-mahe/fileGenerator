@@ -5,6 +5,7 @@ import random
 
 def fileGen(jsonObj, name, tarPort, port, commit_id):
     print commit_id
+    print jsonObj
     tarPort = int(tarPort)
     port = (port)
     envVars = json.loads(jsonObj)
@@ -36,3 +37,4 @@ if __name__ == '__main__':
         fileGen(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
     else:
         fileGen(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], '%032x' % random.randrange(16**32))
+
